@@ -12,11 +12,6 @@ const button = document.getElementById("login-button");
 const buttonText = document.getElementById("login-button-text");
 const spinner = document.getElementById("login-spinner");
 
-// Sudah login? Tidak perlu lihat halaman login lagi.
-if (localStorage.getItem(SESSION_KEY)) {
-  location.replace("index.html");
-}
-
 function showError(message) {
   errorBox.textContent = message;
   errorBox.hidden = false;
