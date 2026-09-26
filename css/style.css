@@ -171,11 +171,6 @@ body {
   border-radius: 4px;
 }
 
-/* ============================================
-   3. NAVBAR + LAYOUT KATALOG  (bagian Ryan)
-   Style .toolbar / .product-grid / .modal
-   ditambahkan oleh Orang B dan C.
-   ============================================ */
 .navbar {
   background-color: var(--brand);
   color: #fff;
