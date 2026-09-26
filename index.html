@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katalog Produk — Mini Shopee</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- session.js WAJIB pertama: dia yang mengecek login & menampilkan body -->
+    <script src="./js/session.js" defer></script>
+    <script src="./js/products.js" defer></script>
+    <script src="./js/cart.js" defer></script>
+  </head>
+
+  <!-- hidden dilepas oleh session.js kalau user terbukti sudah login -->
+  <body hidden>
+    <header class="navbar">
+      <div class="navbar-inner">
+        <span class="navbar-brand">Mini Shopee</span>
+
+        <div class="navbar-right">
+          <span id="greeting" class="navbar-greeting"></span>
+
+          <!-- Badge & total keranjang: diisi oleh cart.js (Orang C) -->
+          <button type="button" id="cart-button" class="cart-button">
+            Keranjang
+            <span id="cart-badge" class="cart-badge">0</span>
+          </button>
+          <span id="cart-total" class="cart-total"></span>
+
+          <button type="button" id="logout-button" class="logout-button">
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Toolbar: search, filter, sorting — diisi oleh Orang C -->
+      <section class="toolbar">
+        <input type="search" id="search-input" placeholder="Cari produk..." />
+        <select id="category-filter">
+          <option value="">Semua kategori</option>
+        </select>
+        <select id="sort-select">
+          <option value="">Urutkan...</option>
+          <option value="price-asc">Harga termurah</option>
+          <option value="price-desc">Harga termahal</option>
+          <option value="rating-desc">Rating tertinggi</option>
+        </select>
+      </section>
+
+      <!-- Pesan error global kalau fetch produk gagal — diisi Orang B -->
+      <div id="products-error" class="error-box" role="alert" hidden></div>
+
+      <!-- Grid kartu produk — diisi Orang B -->
+      <section id="product-grid" class="product-grid"></section>
+
+      <button type="button" id="load-more" class="load-more" hidden>
+        Load More
+      </button>
+    </main>
+
+    <!-- Modal detail produk — diisi Orang B (event delegation) -->
+    <div id="product-modal" class="modal" hidden>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </body>
+</html>
