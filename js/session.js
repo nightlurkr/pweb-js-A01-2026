@@ -1,5 +1,4 @@
-/* session.js — Auth guard + navbar untuk index.html (Ryan / Orang A)
-   Dimuat paling awal di index.html, sebelum products.js dan cart.js. */
+/* Auth guard + navbar untuk index.html */
 
 const SESSION_KEY = "firstName";
 const firstName = localStorage.getItem(SESSION_KEY);

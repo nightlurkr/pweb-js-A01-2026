@@ -1,4 +1,4 @@
-/* products.js — Orang B: fetch produk, render card grid, load more, modal detail */
+/* fetch produk, render card grid, load more, modal detail */
 
 (() => {
   const PRODUCTS_API = "https://dummyjson.com/products?limit=0"; // limit=0 = ambil semua
@@ -15,13 +15,6 @@
   let visibleCount = 0;
 
   // ---------- Util ----------
-
-  function formatPrice(number) {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-    }).format(number);
-  }
 
   function originalPrice(product) {
     if (!product.discountPercentage) return product.price;

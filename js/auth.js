@@ -1,5 +1,4 @@
-/* auth.js — Halaman login (Ryan / Orang A)
-   Tugas file ini: validasi kredensial ke dummyjson, simpan sesi, redirect. */
+/* login page */
 
 const USERS_API = "https://dummyjson.com/users?limit=0"; // limit=0 = ambil semua user
 const SESSION_KEY = "firstName";

@@ -1,9 +1,9 @@
-/* ============================================
-   1. VARIABEL DASAR  (dipakai bersama tim)
-   ============================================ */
+/* declare variabel */
 :root {
-  --brand: #ee4d2d;
-  --brand-dark: #d73211;
+  --brand: #0f766e;
+  --brand-dark: #0b5c55;
+  --brand-tint: #ecfbf8;
+  --brand-ring: rgba(15, 118, 110, 0.18);
   --bg: #f6f7f9;
   --surface: #ffffff;
   --text: #1f2430;
@@ -29,16 +29,14 @@ body {
   line-height: 1.5;
 }
 
-/* ============================================
-   2. HALAMAN LOGIN
-   ============================================ */
+/* login page */
 .login-body {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: linear-gradient(135deg, #fff5f2 0%, #f6f7f9 60%);
+  background: linear-gradient(135deg, var(--brand-tint) 0%, var(--bg) 60%);
 }
 
 .login-card {
@@ -68,7 +66,7 @@ body {
   color: var(--text-muted);
 }
 
-/* ---- Form ---- */
+/*  Form  */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -100,10 +98,10 @@ body {
 .field input:focus {
   outline: none;
   border-color: var(--brand);
-  box-shadow: 0 0 0 3px rgba(238, 77, 45, 0.15);
+  box-shadow: 0 0 0 3px var(--brand-ring);
 }
 
-/* ---- Tombol ---- */
+/* Tombol */
 .login-button {
   display: flex;
   align-items: center;
@@ -131,7 +129,7 @@ body {
   opacity: 0.7;
 }
 
-/* ---- Spinner loading ---- */
+/* Spinner loading */
 .spinner {
   width: 15px;
   height: 15px;
@@ -147,7 +145,7 @@ body {
   }
 }
 
-/* ---- Kotak error ---- */
+/* Kotak error  */
 .error-box {
   margin-bottom: 16px;
   padding: 11px 13px;
@@ -395,10 +393,10 @@ body {
 }
 
 .load-more:hover {
-  background-color: #fff5f2;
+  background-color: var(--brand-tint);
 }
 
-/* ---- Modal ---- */
+/* Modal */
 .modal {
   position: fixed;
   inset: 0;
@@ -486,4 +484,167 @@ body {
   width: 100%;
   margin-top: 14px;
   padding: 11px;
+}
+/* TOOLBAR + PANEL KERANJANG */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.toolbar input[type="search"] {
+  flex: 1 1 240px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.toolbar select {
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.toolbar input[type="search"]:focus,
+.toolbar select:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px var(--brand-ring);
+}
+
+/* Panel keranjang */
+.navbar-right {
+  position: relative;
+}
+
+.cart-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 20;
+  width: 340px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 16px;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(31, 36, 48, 0.18);
+}
+
+.cart-panel[hidden] {
+  display: none;
+}
+
+.cart-panel-title {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.cart-empty {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.cart-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+
+.cart-row-thumb {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  background-color: var(--bg);
+  border-radius: 6px;
+}
+
+.cart-row-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-row-title {
+  font-size: 13px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cart-row-price {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.cart-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.qty-btn {
+  width: 24px;
+  height: 24px;
+  font-size: 13px;
+  font-family: inherit;
+  line-height: 1;
+  color: var(--text);
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.qty-btn:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.qty-value {
+  min-width: 18px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.remove-btn:hover {
+  color: #fff;
+  background-color: var(--danger);
+  border-color: var(--danger);
+}
+
+.cart-clear {
+  width: 100%;
+  margin-top: 14px;
+  padding: 9px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--danger);
+  background-color: var(--danger-bg);
+  border: 1px solid rgba(192, 57, 43, 0.25);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.cart-clear:hover {
+  color: #fff;
+  background-color: var(--danger);
 }

@@ -6,13 +6,14 @@
     <title>Katalog Produk — Mini Shopee</title>
     <link rel="stylesheet" href="./css/style.css" />
 
-    <!-- session.js WAJIB pertama: dia yang mengecek login & menampilkan body -->
+  
     <script src="./js/session.js" defer></script>
+    <script src="./js/format.js" defer></script>
     <script src="./js/products.js" defer></script>
     <script src="./js/cart.js" defer></script>
   </head>
 
-  <!-- hidden dilepas oleh session.js kalau user terbukti sudah login -->
+  
   <body hidden>
     <header class="navbar">
       <div class="navbar-inner">
@@ -21,7 +22,7 @@
         <div class="navbar-right">
           <span id="greeting" class="navbar-greeting"></span>
 
-          <!-- Badge & total keranjang: diisi oleh cart.js (Orang C) -->
+         
           <button type="button" id="cart-button" class="cart-button">
             Keranjang
             <span id="cart-badge" class="cart-badge">0</span>
@@ -31,12 +32,21 @@
           <button type="button" id="logout-button" class="logout-button">
             Logout
           </button>
+
+          
+          <div id="cart-panel" class="cart-panel" hidden>
+            <h2 class="cart-panel-title">Keranjang</h2>
+            <div id="cart-items" class="cart-items"></div>
+            <button type="button" id="cart-clear" class="cart-clear" hidden>
+              Kosongkan keranjang
+            </button>
+          </div>
         </div>
       </div>
     </header>
 
     <main class="container">
-      <!-- Toolbar: search, filter, sorting — diisi oleh Orang C -->
+      
       <section class="toolbar">
         <input type="search" id="search-input" placeholder="Cari produk..." />
         <select id="category-filter">
@@ -50,10 +60,10 @@
         </select>
       </section>
 
-      <!-- Pesan error global kalau fetch produk gagal — diisi Orang B -->
+      
       <div id="products-error" class="error-box" role="alert" hidden></div>
 
-      <!-- Grid kartu produk — diisi Orang B -->
+      
       <section id="product-grid" class="product-grid"></section>
 
       <button type="button" id="load-more" class="load-more" hidden>
@@ -61,7 +71,7 @@
       </button>
     </main>
 
-    <!-- Modal detail produk — diisi Orang B (event delegation) -->
+    
     <div id="product-modal" class="modal" hidden>
       <div class="modal-content" id="modal-content"></div>
     </div>
