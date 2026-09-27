@@ -17,6 +17,8 @@
   --font: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
 }
 
+/* Bagian Ryan*/
+
 * {
   box-sizing: border-box;
 }
@@ -250,6 +252,8 @@ body {
   margin: 0 auto;
   padding: 24px 20px 48px;
 }
+
+/* Bagian Dave */
 
 .loading-state,
 .empty-state {

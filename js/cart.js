@@ -52,7 +52,7 @@
   /* Debounce pakai closure.
      timerId hidup di dalam debounce(), tapi fungsi yang dikembalikan tetap
      "mengingat" variabel itu setiap kali dipanggil. Jadi setiap ketikan baru
-     membatalkan timer ketikan sebelumnya — filter cuma jalan sekali,
+     membatalkan timer ketikan sebelumnya - filter cuma jalan sekali,
      setelah user berhenti mengetik. */
   function debounce(callback, delay) {
     let timerId;
